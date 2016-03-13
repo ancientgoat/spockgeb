@@ -23,9 +23,9 @@ import static com.jayway.restassured.RestAssured.given
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @IntegrationTest("server.port:0")
-public class TestHello {
+public class ITestHello {
 
-    public static Logger log = LoggerFactory.getLogger(TestHello.class)
+    public static Logger log = LoggerFactory.getLogger(ITestHello.class)
 
     @Autowired
     public ExpenseReportService expenseReportService;

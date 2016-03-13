@@ -43,8 +43,8 @@ public class ExpenseReportController extends BaseController {
   }
 
   @RequestMapping(value = "/expenses2", method = RequestMethod.GET)
-  public ResponseEntity findAllPageable2(Pageable pageable) {
-    return super.findAllPageable(pageable);
+  public ResponseEntity findAllPageable2() {
+    return super.findAll();
   }
 
   /**

@@ -13,6 +13,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Service/Business layer between the Controller and the Repositories.
  */
@@ -35,6 +37,11 @@ public class ExpenseReportService {
    */
   public Page<ExpenseReport> findAll(final Pageable pageable) {
     return expenseReportRepo.findAll(pageable);
+  }
+
+  public List<ExpenseReport> findAll() {
+    List<ExpenseReport> all = expenseReportRepo.findAll();
+    return all;
   }
 
   /**

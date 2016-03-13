@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 /**
  * A super class containing all supported rest calls for the ExpenseManagement project.
  * Both Controllers, one with Basic Authorization Security required and one without.
@@ -58,6 +60,15 @@ public class BaseController {
       httpStatus = HttpStatus.NOT_FOUND;
     }
     return new ResponseEntity(expenseReportPages, httpStatus);
+  }
+
+  public ResponseEntity findAll() {
+    HttpStatus httpStatus = HttpStatus.OK;
+    final List<ExpenseReport> expenseReportList = expenseReportService.findAll();
+    if (null == expenseReportList || 0 == expenseReportList.size()) {
+      httpStatus = HttpStatus.NOT_FOUND;
+    }
+    return new ResponseEntity(expenseReportList, httpStatus);
   }
 
 
